@@ -5,19 +5,16 @@ import './App.css';
 
 class App extends Component {
 
-  state: {
+  state = {
     presidents: [],
   }
 
   sortingFunction = (SORT) => {
     const url = new URL(`https://presidents-back-end.herokuapp.com/presidents`);
-      url.searchParams.append('sort', SORT);
-        fetch(url)
-          .then(response => response.json())
-            .then(presidents => this.setState({
-                presidents: presidents
-              })
-            )
+    url.searchParams.append('sort', SORT);
+    fetch(url)
+      .then(response => response.json())
+      .then(presidents => this.setState({presidents: presidents}));
   }
 
   ascending = () => {
@@ -42,7 +39,7 @@ class App extends Component {
           <button className='sort-button' onClick={this.ascending}>Ascending</button>
           <button className='sort-button' onClick={this.descending}>Descending</button>
         </div>
-        {this.state ? this.renderPresidents() : null}
+        {this.state.presidents.length > 0 ? this.renderPresidents() : null}
       </div>
     );
   }

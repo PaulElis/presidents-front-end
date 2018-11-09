@@ -1,8 +1,13 @@
 #card-container{
   border: 1px solid black;
   padding: 1%;
+  margin: 5% 15%;
 }
 
 #president-name{
+  font-weight: 900;
+}
+
+span.title{
   font-weight: 900;
 }

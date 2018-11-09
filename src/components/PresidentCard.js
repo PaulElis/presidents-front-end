@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import CardSection from './CardSection.js'
 import '../styles/Card.css';
 
-class Card extends Component {
+class PresidentCard extends PureComponent {
   render() {
     return (
       <div id="card-container">
@@ -11,14 +11,14 @@ class Card extends Component {
         </CardSection>
 
         <CardSection>
-          <span>Born: {this.props.president.Birthday} </span>
+          <span><span className='title'>Born:</span> {this.props.president.Birthday} </span>
           <span>in {this.props.president.Birthplace}</span>
         </CardSection>
 
         <CardSection>
           {this.props.president['Death day'] ?
           <div>
-            <span>Died: {this.props.president['Death day']} </span>
+            <span><span className='title'>Died:</span> {this.props.president['Death day']} </span>
             <span>in {this.props.president['Death place']}</span>
           </div> : null }
         </CardSection>
@@ -27,4 +27,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default PresidentCard;

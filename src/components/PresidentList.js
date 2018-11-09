@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Card from './Card.js'
+import React, { PureComponent } from 'react';
+import PresidentCard from './PresidentCard.js'
 import '../styles/PresidentList.css';
 
-class PresidentList extends Component {
+class PresidentList extends PureComponent {
   render() {
     return (
       <div id="presidentlist-container">
-        <Card president={this.props.president}/>
+        <PresidentCard president={this.props.president}/>
       </div>
     );
   }
