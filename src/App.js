@@ -10,7 +10,6 @@ class App extends Component {
   }
 
   sortingFunction = (SORT) => {
-    // const url = new URL(`http://localhost:3000/presidents`);
     const url = new URL(`https://presidents-back-end.herokuapp.com/presidents`);
       url.searchParams.append('sort', SORT);
         fetch(url)

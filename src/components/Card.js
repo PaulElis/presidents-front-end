@@ -4,7 +4,6 @@ import '../styles/Card.css';
 
 class Card extends Component {
   render() {
-    console.log(this.props.president);
     return (
       <div id="card-container">
         <CardSection>
