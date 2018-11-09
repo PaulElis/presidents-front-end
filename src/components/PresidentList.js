@@ -4,7 +4,7 @@ import '../styles/PresidentList.css';
 class PresidentList extends Component {
   render() {
     return (
-      <div id="presidentcard-container">
+      <div id="presidentlist-container">
         <p>{this.props.president.President}</p>
       </div>
     );

@@ -1,4 +1,9 @@
 .App {
   text-align: center;
-  /* color: white; */
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ccc;
+}
+
+.sort-button{
+  font-family: 'Montserrat', sans-serif;
 }

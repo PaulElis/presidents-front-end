@@ -10,6 +10,8 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -22,6 +24,21 @@
     <title>Presidents</title>
   </head>
   <body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCzXx8PQFLyZ4i8JWmSYMAjB5DPhr_x44Q",
+        authDomain: "presidents-front-end.firebaseapp.com",
+        databaseURL: "https://presidents-front-end.firebaseio.com",
+        projectId: "presidents-front-end",
+        storageBucket: "",
+        messagingSenderId: "499662979078"
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
