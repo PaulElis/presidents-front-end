@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './components/Header.js'
 import PresidentList from './components/PresidentList.js'
 import './App.css';
 
@@ -37,9 +38,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header />
-        <button className='sort-button' onClick={this.ascending}>Ascending</button>
-        <button className='sort-button' onClick={this.descending}>Descending</button>
+        <Header />
+        <div id='sort-button-container'>
+          <button className='sort-button' onClick={this.ascending}>Ascending</button>
+          <button className='sort-button' onClick={this.descending}>Descending</button>
+        </div>
         {this.state ? this.renderPresidents() : null}
       </div>
     );

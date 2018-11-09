@@ -1,9 +1,17 @@
 .App {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  background-color: #ccc;
+  letter-spacing: 1px;
+}
+
+#sort-button-container{
+  background-color: #eee;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0% 0% 1% 0%;
+  border-bottom: 1px solid #bbb;
 }
 
 .sort-button{
-  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
 }

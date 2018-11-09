@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Card from './Card.js'
 import '../styles/PresidentList.css';
 
 class PresidentList extends Component {
   render() {
     return (
       <div id="presidentlist-container">
-        <p>{this.props.president.President}</p>
+        <Card president={this.props.president}/>
       </div>
     );
   }
