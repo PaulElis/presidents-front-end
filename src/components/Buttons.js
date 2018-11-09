@@ -5,7 +5,8 @@ class Buttons extends Component {
   render() {
     return (
       <div id="buttons-container">
-        Buttons
+        <button type="button">Ascending</button>
+        <button type="button">Descending</button>
       </div>
     );
   }

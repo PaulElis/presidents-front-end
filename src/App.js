@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import PresidentList from './components/PresidentList.js'
+// import Buttons from './components/Buttons.js'
 import './App.css';
 
 class App extends Component {
 
   state: {
     presidents: [],
-  }
-
-  componentDidMount = () => {
-    this.sortingFunction('asc')
   }
 
   sortingFunction = (SORT) => {
@@ -23,18 +20,27 @@ class App extends Component {
             )
   }
 
+  ascending = () => {
+    this.sortingFunction('asc')
+  }
+
+  descending = () => {
+    this.sortingFunction('desc')
+  }
+
   renderPresidents = () => {
     return this.state.presidents.map(president =>
-      <PresidentList president={president} />
+      <PresidentList president={president} key={president.President}/>
     )
   }
 
   render() {
-    // console.log('Presidents:', this.state);
     return (
       <div className="App">
         <header />
-          {this.state ? this.renderPresidents() : null}
+        <button id='desc' onClick={this.ascending}>Ascending</button>
+        <button id='desc' onClick={this.descending}>Descending</button>
+        {this.state ? this.renderPresidents() : null}
       </div>
     );
   }
