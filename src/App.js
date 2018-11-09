@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import PresidentList from './components/PresidentList.js'
 import './App.css';
 
 class App extends Component {
+
+  state: {
+    presidents: [],
+  }
+
+  componentDidMount = () => {
+    this.sortingFunction('asc')
+  }
+
+  sortingFunction = (SORT) => {
+    const url = new URL(`http://localhost:3000/presidents`);
+      url.searchParams.append('sort', SORT);
+        fetch(url)
+          .then(response => response.json())
+            .then(presidents => this.setState({
+                presidents: presidents
+              })
+            )
+  }
+
+  renderPresidents = () => {
+    return this.state.presidents.map(president =>
+      <PresidentList president={president} />
+    )
+  }
+
   render() {
+    // console.log('Presidents:', this.state);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <header />
+          {this.state ? this.renderPresidents() : null}
       </div>
     );
   }
